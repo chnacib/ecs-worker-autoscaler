@@ -4,7 +4,11 @@ Scale ECS service based on amount of messages in SQS queues, scaling in and out 
 
 ## How it works
 
-This repo deploys a couple lambda functions triggered by EventBridge and SNS topic to describe SQS queues every minute,and manage ECS services desired count based on approximate number of messages in queue and the number of workers required to process them.
+This repo deploys a S3 Bucket, couple lambda functions triggered by EventBridge and SNS topic to describe SQS queues every minute,and manage ECS services desired count based on approximate number of messages in queue and the number of workers required to process them.
+
+
+![Screenshot from 2023-05-09 21-52-21](https://github.com/chnacib/ecs-worker-autoscaler/assets/84737230/34981eed-83e8-4daa-8220-497a9a8bbd6b)
+
 
 
 ## How to configure
@@ -106,6 +110,7 @@ python3 deletemessage.py
 
 
 
+![a68](https://github.com/chnacib/ecs-worker-autoscaler/assets/84737230/12e24527-aeba-4f67-bfbf-4f3a7d1e5d6a)
 
 
 
