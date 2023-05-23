@@ -81,6 +81,15 @@ def lambda_handler(event, context):
             service_desired_count = service['desiredCount']
             if scaling_desired_count == service_desired_count:
                 scaling_action = "No action required"
+                logs =  {
+                    "Queue_Messages": queue_messages,
+                    "Service_desired_count": service_desired_count,
+                    "Scaling_Desired_Count": scaling_desired_count,
+                    "Action": scaling_action,
+                    "Service": service_name,
+                    "Cluster": cluster_name
+                }
+                logger.info(logs)
     
             elif scaling_desired_count < service_desired_count:
                 scaling_action = "Scaling down service"
