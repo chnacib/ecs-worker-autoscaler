@@ -61,7 +61,7 @@ resource "aws_iam_policy" "lambda_policy" {
             "s3:GetObject"
         ]
 
-        Resource = "${aws_s3_bucket.autoscaler_config.arn}/*"
+        Resource = "arn:aws:s3:::${var.bucket_name}/autoscaler_config.json"
 
       }
     ]

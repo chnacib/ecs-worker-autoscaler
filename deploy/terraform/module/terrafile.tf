@@ -1,5 +1,5 @@
 module "deploy_stack" {
     source = "../"
-    bucket_name = "my-new-bucket-name"
+    bucket_name = "teste-workerautoscaler"
     region = "us-east-1"
 }
